@@ -1,0 +1,165 @@
+ /* RESETS */ 
+ html, body, figure, div, input, textarea, p, h1, h2, h3, h4, h5, h6, ul{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-lato);
+    list-style: none;
+    text-decoration: none;
+}
+figcaption{
+    display: none;
+}
+img{
+    max-width: 100%;
+}
+
+
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.3em;
+    font-weight: 700;
+    box-shadow: 0px 14px 20px 0px rgba(82, 76, 76, 0.596);
+}
+.mainDocument{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    background-color: rgba(197, 195, 195, 0.459);
+}
+.secaoResultados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 284px;
+    width: 300px;
+    padding: 5px 0px;
+}
+.containerResult{
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid #000000;
+}
+.resultTitle{
+    padding-bottom: 10px;
+}
+.divHeader{
+    border: 1px solid #000000;
+    width: 50%;
+    height: 30px;
+    padding: 5px 10px 0px 10px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+.divSoma, .divFreq{
+    border: 1px solid #000000;
+    width: 50%;
+    font-size: 0.8em;
+    height: 20px;
+    padding-left: 50px;
+    padding-top: 3px;
+}
+.divFreq{
+    font-style: italic;
+}
+.secaoGrafico{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 270px;
+
+    padding: 5px 15px;
+}
+.grafTitle{
+    padding-bottom: 10px;
+}
+.containerGraf, .containerSubTit{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: space-between;
+}
+.containerSubTit{
+    height: 10%;
+    align-content: flex-start;
+}
+.divSomaBar{
+    width: 21px;
+    display: flex;
+    justify-content: center;
+}
+.divFreqBar{
+    width: 21px;
+    background-color: grey;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+
+}
+
+@media screen and (min-width: 768px){
+    .mainDocument{
+        flex-direction: row;
+        height: 518px;
+    }
+    .secaoResultados{
+        width: 400px;
+        height: 400px;
+    }
+    .resultTitle{
+        padding-bottom: 30px;
+        font-size: 24px;
+    }
+    .containerResult{
+        max-width: 500px;
+        width: 400px;
+    }
+    .divHeader{
+        height: 33px;
+        font-size: 1em;
+        padding-left: 15px;
+    }
+    .divSoma, .divFreq{
+        font-size: 0.9em;
+        height: 28px;
+        padding-left: 50px;
+        padding-top: 5px;
+    }
+    .secaoGrafico{
+        height: 400px;
+        padding: 0;
+        justify-content: flex-end;
+    }
+    .containerGraf, .containerSubTit{
+        height: 60%;
+    }
+    .containerSubTit{
+        height: 7%;
+        align-content: flex-end;
+    }
+    
+}
+@media screen and (min-width: 1024px){
+    .header{
+        padding: 40px 0px;
+        font-size: 2em;
+    }
+    .mainDocument{
+        height: 560px;
+    }
+}
