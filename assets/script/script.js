@@ -1,8 +1,8 @@
 const destino = document.getElementById("exibeResultados");
-let containerResult = document.createElement("Div");
+const containerResult = document.createElement("Div");
 const secaografico = document.getElementById("exibeGrafico");
 
-let count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];  
+let count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 let dado1 = 0;
 let dado2 = 0;
@@ -25,7 +25,7 @@ function verificaContagem(somaDados){
             count[i-2]++;
         }
     }
-} 
+}
 
 function criarGrafico(arrayRef){
 
@@ -33,15 +33,19 @@ function criarGrafico(arrayRef){
     grafTitle.className = "grafTitle";
     grafTitle.innerText = "Gráfico de Frequência de Soma";
 
+    let containerGrafSub = document.createElement('div');
+    containerGrafSub.className = "contGrafSub";
+
     let containerGraf = document.createElement("Div");
     containerGraf.className = "containerGraf";
 
     let containerSubTit = document.createElement("Div");
     containerSubTit.className = "containerSubTit";
 
+    containerGrafSub.appendChild(containerGraf);
+    containerGrafSub.appendChild(containerSubTit);
     secaografico.appendChild(grafTitle);
-    secaografico.appendChild(containerGraf);
-    secaografico.appendChild(containerSubTit);
+    secaografico.appendChild(containerGrafSub);
 
     for (let i = 2; i <= arrayRef.length+1; i++){
 
@@ -56,7 +60,7 @@ function criarGrafico(arrayRef){
 
         containerGraf.appendChild(freqBar);
         containerSubTit.appendChild(valorSomaBar);
-        
+
     }
 
 }
@@ -83,9 +87,6 @@ function listarEvento(arrayCount){
     newResultTitle.className = "resultTitle";
     newResultTitle.innerText = "Frequência de Soma dos Dados";
 
-    destino.appendChild(newResultTitle);
-    destino.appendChild(containerResult);
-
     let valorSoma = document.createElement("Div");
     valorSoma.innerText = "Soma dos Dados";
     valorSoma.className = "divHeader";
@@ -96,11 +97,17 @@ function listarEvento(arrayCount){
 
     containerResult.appendChild(valorSoma);
     containerResult.appendChild(freqSoma);
-    
+
     for (let i = 2; i <= arrayCount.length+1; i++){
         mostrarResultados(i + " : ", arrayCount[i-2]);
     }
+
+
+    destino.appendChild(newResultTitle);
+    destino.appendChild(containerResult);
 }
 
 listarEvento(count);
+
 criarGrafico(count);
+
